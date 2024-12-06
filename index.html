@@ -70,8 +70,9 @@
   </style>
 </head>
 <body>
-  <h1 class="title">豬穎每月小確幸</h1>
+  <!-- <h1 class="title">豬穎每月小確幸</h1> -->
   <section class="container" id="js-lotto">
+      
       <div class="square" data-order="0">
           <div class="square__content">🍰</div>
       </div>
@@ -113,6 +114,9 @@ const prizes = {
     6: '💩',
     7: '🍗',
 };
+const month = new Date().getMonth()
+localStorage.setItem("month", month)
+const total = localStorage.getItem("total")
 const total_items = 8;
 const minimum_jumps = 30; // 超過這數字開始進入抽獎
 let current_index = -1;
@@ -174,9 +178,19 @@ function controllSpeed() {
             icon: 'success',
           });
         }
-
+        let count = localStorage.getItem('total')
+        if (count == null) count = 3
+        if (parseInt(localStorage.getItem("total")) == 0) {
+          document.querySelector('#js-start').classList.add('prevent')
+        }
+        if (parseInt(localStorage.getItem("total")) == 0) {
+          document.querySelector('#js-start').classList.add('prevent')
+          return
+        } 
+        localStorage.setItem('total', count - 1)
         prize = -1;
         jumps = 0;
+        
     // 2. 還沒抽繼續跑
     } else {
         // 還沒進入關鍵抽獎階段前的速度 (前菜轉特效)
@@ -203,18 +217,23 @@ function controllSpeed() {
 }
 
 function init() {
+    let count = localStorage.getItem('total')
+    if (count == null) count = 3
+    if (parseInt(localStorage.getItem("total")) == 0) {
+      document.querySelector('#js-start').classList.add('prevent')
+      return
+    } 
     jumps = 0;
     speed = 100;
     prize = -1;
     controllSpeed();
-    const month = new Date().getMonth()
-    sessionStorage.setItem('month', month)
 }
 
 $(document).ready(() => {
-    const month = new Date().getMonth()
-    const day = new Date().getDate()
-    if (sessionStorage.getItem("month") != month && day == 6) {
+    if (parseInt(localStorage.getItem("month")) != month) {
+      localStorage.setItem("total", 3)
+    }
+    if (parseInt(localStorage.getItem("total")) != 0) {
       $('#js-start').on('click', init)
     } else {
       document.querySelector('#js-start').classList.add('prevent')
