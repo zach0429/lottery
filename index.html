@@ -2,14 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Lily Lottery</title>
-    <meta name="description" content="Lily Lottery">
-
-    <link rel="icon" href="/lottery/favicon.ico">
-    <link rel="apple-touch-icon" href="/lottery/logos/apple-touch-icon.png" as="image">
-    <meta name="theme-color" content="#d6cda4" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="apple-touch-icon" href="/lottery/logos/apple-touch-icon.png" as="image">
+    <script src="https://cdn.jsdelivr.net/npm/ios-pwa-splash@1.0.0/cdn.min.js"></script>
     <link rel="preload" href="/lottery/imgs/gift.jpg" as="image">
     <link rel="preload" href="/lottery/imgs/nothing.jpg" as="image">
     <link rel="preload" href="/lottery/imgs/salt2.jpg" as="image">
@@ -20,10 +18,126 @@
     <link rel="preload" href="/lottery/imgs/up.png" as="image">
     <link rel="preload" href="/lottery/imgs/right.png" as="image">
     <link rel="preload" href="/lottery/imgs/left.png" as="image">
-    <script type="module" crossorigin src="/lottery/assets/index-B5e7UH5a.js"></script>
-    <link rel="stylesheet" crossorigin href="/lottery/assets/index-DlvgHzNF.css">
-  <link rel="manifest" href="/lottery/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/lottery/registerSW.js"></script></head>
+    <title>Lily Lottery</title>
+    <script type="module" crossorigin src="/lottery/assets/index-CQSQGI_-.js"></script>
+    <link rel="stylesheet" crossorigin href="/lottery/assets/index-CnjW7cG4.css">
+  
+        <style id="vpss-style">
+          #vpss {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: fixed;
+  background-color: var(--vpss-bg-splash, #ffffff);
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0;
+  z-index: 99999;
+  opacity: 1;
+}
+
+#vpss.vpss-hidden {
+  pointer-events: none;
+  animation: vpss-hide 200ms forwards;
+}
+
+@keyframes vpss-hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+          #vpss .vpss-loader {
+  display: inline-block;
+  position: relative;
+  width: 72px;
+  height: 10px;
+}
+
+#vpss .vpss-loader .vpss-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--vpss-bg-loader, #ff0000);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+#vpss .vpss-loader .vpss-dot:nth-child(1) {
+  left: 8px;
+  animation: vpss-dot1 0.6s infinite;
+}
+
+#vpss .vpss-loader .vpss-dot:nth-child(2) {
+  left: 8px;
+  animation: vpss-dot2 0.6s infinite;
+}
+
+#vpss .vpss-loader .vpss-dot:nth-child(3) {
+  left: 32px;
+  animation: vpss-dot2 0.6s infinite;
+}
+
+#vpss .vpss-loader .vpss-dot:nth-child(4) {
+  left: 56px;
+  animation: vpss-dot3 0.6s infinite;
+}
+
+@keyframes vpss-dot1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes vpss-dot2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+@keyframes vpss-dot3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+        </style>
+      <link rel="manifest" href="/lottery/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/lottery/registerSW.js"></script></head>
   <body>
     <div id="app"></div>
+  
+    <div id="vpss">
+      <div class="vpss-logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg></div>
+      <div class="vpss-loader">
+  <div class="vpss-dot"></div>
+  <div class="vpss-dot"></div>
+  <div class="vpss-dot"></div>
+  <div class="vpss-dot"></div>
+</div>
+
+    </div>
+    <script>
+      (function () {
+        window.__VPSS__ = {
+          renderedAt: new Date().getTime(),
+          minDurationMs: 0,
+        };
+      })();
+    </script>
   </body>
 </html>
